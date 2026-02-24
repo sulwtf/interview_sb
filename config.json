@@ -1,0 +1,7 @@
+{
+    "token": "add your token here",
+    "guild_id": [],
+    "interview_message": "hey, thanks for joining. to **instantly** get accepted please add two people to this group chat and **__join the telegram__**.\n-# announcements and giveaways will be posted in the telegram\n\n https://t.me/socialblah\n\nhttps://media.discordapp.net/attachments/1439691075328540734/1439691623347781853/image.png?ex=691b70cf&is=691a1f4f&hm=9def7772654d8dadffd18b7520e2b53c21c5b89f32bb10d32a5dda17889077be&=&format=webp&quality=lossless",
+    "message_to_new": "<ping1> welcome to the server\n-# join the telegram for gws https://t.me/socialblah",
+    "Comment": "message_to_new is the message that is sent out if the user has been accepted by someone else, interview_message is the message sent for the interview, feel free to replace everything, just keep the main strucutre intact for simple instructions. "
+}
